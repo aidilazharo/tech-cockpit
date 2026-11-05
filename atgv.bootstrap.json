@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "stacks": [
+    "react"
+  ],
+  "source": "github-main-catalog",
+  "catalogVersion": "1.1.0",
+  "templateDigest": "148b44befa46161daa781de2e3e5b45ff04b1457a18ce4004514f04294d9eece",
+  "status": "draft",
+  "generatedFiles": [
+    ".env.example",
+    ".gitignore",
+    "atgv.bootstrap.json",
+    "index.html",
+    "package.json",
+    "server/api.test.mjs",
+    "server/index.mjs",
+    "server/migrate.mjs",
+    "src/main.jsx",
+    "vite.config.js"
+  ]
+}

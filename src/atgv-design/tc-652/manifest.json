@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "storyKey": "TC-652",
+  "designKey": "TC-652",
+  "designRevision": 1,
+  "approvedStackSha": "c695714b8ecce5f9f1e473a225d3216aa8798e5c",
+  "baseSha": "c695714b8ecce5f9f1e473a225d3216aa8798e5c",
+  "baseSource": "approved-stack",
+  "contentSha": "a9b22e149b05575f75aa8f5ade3052337b8708617b1cfff3b8f9bcc9685731a7",
+  "sourceFiles": [
+    "src/atgv-design/tc-652/index.ts",
+    "src/atgv-design/tc-652/README.md",
+    "src/atgv-design/tc-652/Screens.css",
+    "src/atgv-design/tc-652/Screens.tsx"
+  ],
+  "publishedAt": "2026-11-12T21:26:29.452Z",
+  "dependencyFiles": [
+    "package-lock.json"
+  ],
+  "dependencyLockSha256": "40682342fc5a85890c408a5f9deacd58eaa1ea3caeb1e9d6f30891d379015266"
+}

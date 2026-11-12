@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+target/
+bin/
+obj/
+.angular/
+.env
+.env.*
+!.env.example
+data/*.db
+data/*.db-*
+*.sqlite*
+*.log
+.DS_Store

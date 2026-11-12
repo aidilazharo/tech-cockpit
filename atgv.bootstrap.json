@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "stacks": [
+    "react"
+  ],
+  "source": "github-main-catalog",
+  "catalogVersion": "1.1.6",
+  "templateDigest": "087de05b131353c8316bd6267ccf35fdc7330147494330df3a4c44c9dc35b212",
+  "status": "draft",
+  "generatedFiles": [
+    ".env.example",
+    ".gitignore",
+    "atgv.bootstrap.json",
+    "e2e/smoke.spec.ts",
+    "index.html",
+    "package.json",
+    "playwright.config.ts",
+    "server/api.test.mjs",
+    "server/index.mjs",
+    "server/migrate.mjs",
+    "src/App.test.tsx",
+    "src/App.tsx",
+    "src/main.tsx",
+    "tsconfig.json",
+    "vite.config.ts"
+  ]
+}

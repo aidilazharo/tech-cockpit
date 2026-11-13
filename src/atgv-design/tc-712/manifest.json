@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "storyKey": "TC-712",
+  "designKey": "TC-712",
+  "designRevision": 1,
+  "approvedStackSha": "b82b2640babf98975e5d061545fc892a6add3ad5",
+  "baseSha": "b82b2640babf98975e5d061545fc892a6add3ad5",
+  "baseSource": "approved-stack",
+  "contentSha": "f1f43ba6d29a9ec445580ed55e2e20b9f08d647f2a55952025774afd44df92e0",
+  "sourceFiles": [
+    "src/atgv-design/tc-712/index.ts",
+    "src/atgv-design/tc-712/README.md",
+    "src/atgv-design/tc-712/Screens.css",
+    "src/atgv-design/tc-712/Screens.tsx"
+  ],
+  "publishedAt": "2026-11-13T01:43:26.655Z",
+  "dependencyFiles": [
+    "package-lock.json"
+  ],
+  "dependencyLockSha256": "9d134d46e32a791267629dd0d9ca92b2f78bc719ba74bddbef6806aadc2641cb"
+}

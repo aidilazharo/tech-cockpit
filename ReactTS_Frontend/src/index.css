@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/open-sans';
+@import './styles/qi-tokens.css';
+
+/* Non-colour theme values. Colours and radii come only from qi-tokens.css. */
+@theme {
+  /* Open Sans everywhere for now; switch --font-heading to AIA Everest when the files arrive. */
+  --font-sans: 'Open Sans Variable', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-heading: 'Open Sans Variable', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+
+  /* Qi frames: phone 375, tablet 768/1024, desktop 1440 */
+  --breakpoint-*: initial;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 90rem;
+
+  /* Qi describes shadow levels but publishes no values; neutral placeholders until the Figma specs are available. */
+  --shadow-*: initial;
+  --shadow-sm: 0 1px 2px rgb(20 24 28 / 0.08);
+  --shadow-md: 0 4px 12px rgb(20 24 28 / 0.12);
+  --shadow-lg: 0 12px 32px rgb(20 24 28 / 0.16);
+}
+
+/* Qi heading scale: desktop 48/40/32/28/24/20, below 768px 32/28/24/22/20/18 */
+@utility heading-1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 2rem;
+  @variant md {
+    font-size: 3rem;
+  }
+}
+@utility heading-2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  font-size: 1.75rem;
+  @variant md {
+    font-size: 2.5rem;
+  }
+}
+@utility heading-3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 1.5rem;
+  @variant md {
+    font-size: 2rem;
+  }
+}
+@utility heading-4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 1.375rem;
+  @variant md {
+    font-size: 1.75rem;
+  }
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface-default);
+    color: var(--color-text-default);
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  :focus-visible {
+    outline-color: var(--color-border-focus);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

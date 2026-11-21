@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Shaped like Okta's app metadata. Public test certificate only: its private key was discarded. -->
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://www.okta.com/exkTEST000000000000">
+  <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>
+        MIIDHzCCAgegAwIBAgIUbxb45968isNJ/+zl4h0n3I97nVAwDQYJKoZIhvcNAQEL
+        BQAwHzEdMBsGA1UEAwwUdGVjaGNvY2twaXQtdGVzdC1pZHAwHhcNMjYxMDIxMTMz
+        NDAxWhcNMzYxMDE4MTMzNDAxWjAfMR0wGwYDVQQDDBR0ZWNoY29ja3BpdC10ZXN0
+        LWlkcDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAO/V8txkudNlayqa
+        0Vh1MsSNtfAhgCvSWmkVJZ9D+xhMqsA8RgBZB+Nsaf7MOiXvhPDSEpsjfLpREFiv
+        zDltJKMHB9iaAGmUY7TZS8jq5klhLO0T/hSzZHAtdT3znOTuyoDxQrgWvRieszn1
+        vcEJfZIhSNtJ9Kq/p9f21HQCjKCxbaS/HZY+5QDlYtz12dKvaZ3S10+DO85QL0Qf
+        sBKNgEtvempUF/XeOQVbltK4ysbCa9nN7oAV6GNJcaKDI2OTKDWA6QG1sDnyyPkY
+        W7odsOJu1r+udxvm4MjDY3ZwklKk7I6UN99EyjLdcD42DGni92IlzOdpR7zjQ8wR
+        yjQlgRECAwEAAaNTMFEwHQYDVR0OBBYEFHhpE7SCURm9nJNxR/Np+RV6qJY6MB8G
+        A1UdIwQYMBaAFHhpE7SCURm9nJNxR/Np+RV6qJY6MA8GA1UdEwEB/wQFMAMBAf8w
+        DQYJKoZIhvcNAQELBQADggEBAJrE//PEb76NpzR5UTyItzj/4WFwGwzSJBPHrPD+
+        /VW7b0Hw7efe55NIkBFp0Ta128WAj9cUSclgr6df/M3kGQno+qF+7KuGRbYmF5q1
+        702EO/6VCv4NGTQkcgT4+KgaZxhzVgvXpe91ZxSC/jCyvHKpN1l+90qHgvYoVKav
+        TzPNSePy35hBObgcSEPaYKYV+1tWVm40BZ0TTD/G+JhseI5Dlhk11vAlH+vr+AdN
+        Z5RckjTuSJirl6VsQQ6pp7KHsWKz/nX35DLW/PjXqSSWsbgMg5N6d119eJGcsYHS
+        /ctkeCFmJaiQnW/z3KFAQ110vPydQwO47YUHjhnuSX9oYN0=
+          </ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://example.okta.com/app/example_techcockpit_1/exkTEST000000000000/sso/saml"/>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://example.okta.com/app/example_techcockpit_1/exkTEST000000000000/sso/saml"/>
+  </md:IDPSSODescriptor>
+</md:EntityDescriptor>

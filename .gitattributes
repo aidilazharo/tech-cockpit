@@ -1,0 +1,6 @@
+# LF everywhere so scripts behave the same in Git Bash and cmd on Windows and on Linux (CI, App Service)
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff2 binary

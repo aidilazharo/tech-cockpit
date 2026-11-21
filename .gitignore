@@ -1,0 +1,48 @@
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# Zips of node_modules: never share dependencies that way, the lockfile + `npm ci` is the distribution
+node_modules.zip
+
+# Test output
+coverage/
+playwright-report/
+test-results/
+blob-report/
+.playwright/
+.playwright-mcp/
+# Full test suite reports and logs written by the /commit skill
+test-reports/
+
+# Environment files: only *.example files are committed
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Local file storage (dev uploads, STORAGE_LOCAL_PATH); anchored, so source folders named storage are kept
+/NestJS_Backend/storage/
+
+# Logs
+logs/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# AIA confidential business case material (photos of the spec, the approval matrix, a chat with colleagues' names):
+# kept on this machine only; what we agree is written in docs/modules/pmo.md (decided 2026-10-26).
+docs/template/bizcase/
+
+# Real ServiceNow exports written by poc/poc-snow-apm.js (they hold owner and manager names): kept on this machine only.
+# Anchored, so the sanitised samples in NestJS_Backend/test/fixtures/apm/ stay committed (decided 2026-10-27).
+/apm/
+.ai-coauthor-hooks/prepare-commit-msg
+.ai-coauthor-hooks/post-commit

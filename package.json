@@ -1,0 +1,21 @@
+{
+  "name": "tech-cockpit-atgv-preview",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Root Vite entry point for the ATGV Custom Stack workflow; existing applications remain unchanged.",
+  "workspaces": [
+    "ReactTS_Frontend"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "npm run build --workspace reactts-frontend",
+    "test": "npm run test --workspace reactts-frontend"
+  },
+  "devDependencies": {
+    "vite": "8.1.6"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

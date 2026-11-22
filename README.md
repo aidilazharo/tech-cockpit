@@ -14,6 +14,10 @@ Enterprise technology one-stop centre for AIA: Technology Reference Model (TRM) 
 | [.claude/skills](.claude/skills)     | Default coding agent (Claude Code): skills that encode how this project is built; rules in [CLAUDE.md](CLAUDE.md), [NestJS_Backend/CLAUDE.md](NestJS_Backend/CLAUDE.md) and [ReactTS_Frontend/CLAUDE.md](ReactTS_Frontend/CLAUDE.md) |
 | [.github/skills](.github/skills)     | Fallback coding agent (GitHub Copilot, local, when Claude is not available): the same skills; rules in [.github/copilot-instructions.md](.github/copilot-instructions.md) and [.github/instructions](.github/instructions) |
 
+## ATGV Custom Stack
+
+To run without Okta or PostgreSQL, use the **ReactTS_Frontend** target in ATGV on branch `fix/atgv-tech-cockpit-runtime`; ATGV starts a local Vite preview with **synthetic read-only data**. See [ATGV.md](ATGV.md). This does not replace the real backend.
+
 ## Getting started
 
 Prerequisites: Node.js 24 or newer (production runs 24 LTS), npm 11.

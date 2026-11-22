@@ -15,7 +15,8 @@
     "test:e2e": "playwright test",
     "test:e2e:okta": "playwright test --config playwright.okta.config.ts",
     "typecheck": "tsc -b",
-    "azure-icons": "node scripts/generate-azure-icons.mjs"
+    "azure-icons": "node scripts/generate-azure-icons.mjs",
+    "test:atgv": "node --test scripts/atgv-preview.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

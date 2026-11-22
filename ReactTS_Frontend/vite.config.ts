@@ -1,13 +1,19 @@
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
+import { atgvPreviewEnabled, createAtgvPreviewPlugin } from "./scripts/atgv-preview.mjs";
+
+const atgvPreview = atgvPreviewEnabled();
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), ...(atgvPreview ? [createAtgvPreviewPlugin()] : [])],
   server: {
     // Same-origin API calls in development; the backend listens on 3000.
-    proxy: { "/api": "http://localhost:3000" },
+    host: atgvPreview ? "127.0.0.1" : undefined,
+    port: process.env.ATGV_PREVIEW_PORT ? Number(process.env.ATGV_PREVIEW_PORT) : undefined,
+    strictPort: atgvPreview,
+    proxy: atgvPreview ? undefined : { "/api": "http://localhost:3000" },
     // Transforms the app and its imports as the server starts, so the first page (and Playwright's first journeys) is not a cold one.
     // Not under Vitest: there it compiles the whole app alongside the first, longest test files.
     warmup: process.env.VITEST

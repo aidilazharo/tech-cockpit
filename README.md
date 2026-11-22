@@ -19,7 +19,6 @@ Enterprise technology one-stop centre for AIA: Technology Reference Model (TRM) 
 For standard multi-application development, isolated mock preview, and ATGV Custom Stack
 integration, see [Local development and ATGV compatibility](docs/guides/local-development-atgv.md).
 
-
 Prerequisites: Node.js 24 or newer (production runs 24 LTS), npm 11.
 
 ### Backend

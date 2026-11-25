@@ -1,0 +1,32 @@
+name: Windows x64 portable bundle
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'ReactTS_Frontend/**'
+      - 'NestJS_Backend/**'
+      - 'scripts/build-windows-portable.ps1'
+      - '.github/workflows/windows-portable.yml'
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: windows-2025
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          architecture: x64
+      - name: Build and inventory portable bundle
+        shell: pwsh
+        run: ./scripts/build-windows-portable.ps1 -OutputDirectory "$env:RUNNER_TEMP/portable-dist"
+      - name: Publish portable bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: tech-cockpit-windows-x64
+          path: ${{ runner.temp }}/portable-dist/*
+          if-no-files-found: error
+          retention-days: 30

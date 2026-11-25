@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "platform": "win32",
+  "arch": "x64",
+  "nodeMajor": 24,
+  "required": true,
+  "applications": [
+    "ReactTS_Frontend",
+    "NestJS_Backend"
+  ]
+}

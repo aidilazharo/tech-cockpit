@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "platform": "win32",
+  "arch": "x64",
+  "nodeMajor": 24,
+  "applications": {
+    "ReactTS_Frontend": {
+      "packageSha256": "7ffe12ad8c972cd5dec7ae54cb4bf212816778ba8fc3534a05c6ed72021123a1",
+      "lockSha256": "e7637fc0d68d41ef6a4f010edf1e5ce67040c76f2ca17fb36dfb103ace6bf9fc",
+      "archiveSha256": "137280d383a701cf4972a138659d0d11116bea0c363e27f664fe8cfd0cf1518d",
+      "chunks": [
+        {
+          "file": "ReactTS_Frontend.001.zip.part",
+          "sha256": "2e80de0d843a974a831ed4f65c1e3e111bf33c3319af56452587fe2728feeb22",
+          "bytes": 33554432
+        },
+        {
+          "file": "ReactTS_Frontend.002.zip.part",
+          "sha256": "9d6c9fee2b4bab2cb4ee768baba02f461dd955c175be17f473a0a2ec463713bc",
+          "bytes": 33554432
+        },
+        {
+          "file": "ReactTS_Frontend.003.zip.part",
+          "sha256": "ac55337d3b9b5e5c44a589e8a5bab73237ac4ed36d2a69977ea54d529835141a",
+          "bytes": 5116341
+        }
+      ],
+      "packageCount": 358
+    },
+    "NestJS_Backend": {
+      "packageSha256": "d18f0e2b75aee6904e198cbb408df8e600383f0eea633bbbdb0775d103d92212",
+      "lockSha256": "78b5d689ab2b6087d2252e9eedf6fb9907880eb06e47465467767db1e1846d99",
+      "archiveSha256": "231cefd6e246d000c3c03951e236d0ea78f529dc4bb730b9e877aa545abac6bc",
+      "chunks": [
+        {
+          "file": "NestJS_Backend.001.zip.part",
+          "sha256": "d4a3addfaaed1d5a8d7ce71ce1a485e69b0e05f92804ae92a20a53254c402b18",
+          "bytes": 33554432
+        },
+        {
+          "file": "NestJS_Backend.002.zip.part",
+          "sha256": "f79634a1624797df01b90df3d109ce2966dee06c50fef8c97a992e87c31150bf",
+          "bytes": 33554432
+        },
+        {
+          "file": "NestJS_Backend.003.zip.part",
+          "sha256": "b7028d90bca0764daa27781f45bd2d3342fefdf7b7db6d5287616c1ea563541a",
+          "bytes": 13215092
+        }
+      ],
+      "packageCount": 512
+    }
+  }
+}

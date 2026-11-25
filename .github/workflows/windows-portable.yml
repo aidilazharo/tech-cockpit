@@ -1,32 +1,43 @@
-name: Windows x64 portable bundle
+name: ATGV Windows dependency bundle
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - 'ReactTS_Frontend/**'
-      - 'NestJS_Backend/**'
-      - 'scripts/build-windows-portable.ps1'
+      - '**/package.json'
+      - '**/package-lock.json'
+      - 'vendor/windows-x64/bundle-policy.json'
+      - 'scripts/build-atgv-windows-dependencies.mjs'
       - '.github/workflows/windows-portable.yml'
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: atgv-windows-dependencies-main
+  cancel-in-progress: true
 jobs:
-  package:
+  bundle:
+    if: github.ref == 'refs/heads/main'
     runs-on: windows-2025
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           architecture: x64
-      - name: Build and inventory portable bundle
+      - name: Build Windows dependency archives
         shell: pwsh
-        run: ./scripts/build-windows-portable.ps1 -OutputDirectory "$env:RUNNER_TEMP/portable-dist"
-      - name: Publish portable bundle
-        uses: actions/upload-artifact@v4
-        with:
-          name: tech-cockpit-windows-x64
-          path: ${{ runner.temp }}/portable-dist/*
-          if-no-files-found: error
-          retention-days: 30
+        run: node scripts/build-atgv-windows-dependencies.mjs
+      - name: Commit verified archives to main for git pull
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vendor/windows-x64
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) { exit 0 }
+          if ($LASTEXITCODE -ne 1) { throw 'git diff failed' }
+          git commit -m "build: refresh ATGV Windows x64 npm dependencies"
+          if ($LASTEXITCODE -ne 0) { throw 'git commit failed' }
+          git push origin HEAD:main
+          if ($LASTEXITCODE -ne 0) { throw 'Main changed or push blocked; rebuild on latest main.' }

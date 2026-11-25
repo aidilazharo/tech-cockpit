@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { createStore } from '../lib/create-store'
 import { api, ApiError, onSessionEnded, setAccessExpiry } from '../lib/api'
 
 export interface Me {
@@ -62,7 +62,7 @@ export function signIn(returnTo: string): void {
   navigation.assign(signInUrl(returnTo))
 }
 
-export const useAuthStore = create<AuthState>()((set, get) => ({
+export const useAuthStore = createStore<AuthState>((set, get) => ({
   status: 'idle',
   me: null,
   notice: null,

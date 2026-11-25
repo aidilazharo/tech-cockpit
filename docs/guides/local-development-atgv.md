@@ -20,6 +20,27 @@ a scanner. ATGV must inspect each application's own manifest and executable entr
   database dumps or real user data.
 - Never copy `node_modules` across operating systems.
 
+## ATGV Windows 11 x64 bundled development
+
+The configured project checkout is `projects/tech-cockpit-system/repository/tech-cockpit/`
+(with its own `.git`). Use ATGV's Pull Repository on main, then Custom Stack → Install & Run.
+The repository's `vendor/windows-x64/` directory carries split, SHA-256-verified ZIP
+archives for both applications. ATGV v0.1.32 or later restores these into each
+application's ignored `node_modules/` directory before startup. The target machine
+needs Windows x64 Node.js 24 and npm 11 on PATH, but no npm package installation.
+Do not extract a standalone copy or use the old portable application script.
+
+The bundle policy is fail-closed: if the archives are unpublished, invalid, or
+no longer match either application's package manifest/lockfile, pull an updated
+bundle from main. ATGV does not use npm install or npm ci as a fallback on Windows x64
+for these applications. The build workflow installs dependencies only on the build
+runner and commits the split files and installed-module inventories to main.
+The checked-in dependency inventory CSV is an estimate from the lockfiles; the
+generated per-application JSON files list the actual bundled module versions.
+
+Backend PostgreSQL and authentication services still require valid local settings.
+ATGV's synthetic preview is not evidence of real backend readiness.
+
 ## Normal development
 
 Run each application separately, using its own lockfile and approved environment:

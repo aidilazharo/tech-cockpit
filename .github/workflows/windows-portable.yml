@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - '.gitattributes'
       - '**/package.json'
       - '**/package-lock.json'
       - 'vendor/windows-x64/bundle-policy.json'

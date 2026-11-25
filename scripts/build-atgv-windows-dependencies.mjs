@@ -49,7 +49,7 @@ try{
   }
   await walk(path.join(cwd,'node_modules'));
   await fs.writeFile(path.join(temp,app+'.modules.json'),JSON.stringify(inventory,null,2)+'\n');
-  manifest.applications[app]={packageSha256:hash(await fs.readFile(path.join(cwd,'package.json'))),lockSha256:hash(await fs.readFile(path.join(cwd,'package-lock.json'))),archiveSha256:digest.digest('hex'),chunks,packageCount:inventory.length};
+  manifest.applications[app]={packageSha256:hash(JSON.stringify(JSON.parse(await fs.readFile(path.join(cwd,'package.json'),'utf8')))),lockSha256:hash(JSON.stringify(JSON.parse(await fs.readFile(path.join(cwd,'package-lock.json'),'utf8')))),archiveSha256:digest.digest('hex'),chunks,packageCount:inventory.length};
  }
  for(const file of await fs.readdir(dir))if(/^(?:ReactTS_Frontend|NestJS_Backend)\.(?:\d{3}\.zip\.part|modules\.json)$/.test(file))await fs.rm(path.join(dir,file));
  for(const file of await fs.readdir(temp))if(file.endsWith('.part')||file.endsWith('.modules.json'))await fs.copyFile(path.join(temp,file),path.join(dir,file));

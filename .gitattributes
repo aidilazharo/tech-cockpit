@@ -4,3 +4,6 @@
 *.jpg binary
 *.ico binary
 *.woff2 binary
+
+# Preserve dependency archive bytes across all Git clients.
+vendor/windows-x64/*.zip.part binary
